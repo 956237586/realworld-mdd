@@ -1,20 +1,19 @@
 package cn.hylstudio.mdse.demo.realworld.model.request.user;
 
-public class UserLoginRequestPayload {
-    private UserLoginRequestDto user;
+import cn.hylstudio.mdse.demo.realworld.model.request.RequestPayload;
 
-    public UserLoginRequestPayload() {
-    }
+public class UserLoginRequestPayload extends RequestPayload {
+	private UserLoginRequestDto user;
 
-    public UserLoginRequestPayload(UserLoginRequestDto user) {
-        this.user = user;
-    }
+	public UserLoginRequestPayload(){
+	}
 
-    public UserLoginRequestDto getUser() {
-        return user;
-    }
+	public UserLoginRequestDto getUser() {
+	    return user;
+	}
+	
+	public void setUser(UserLoginRequestDto user) {
+	    this.user = user;
+	}
 
-    public void setUser(UserLoginRequestDto user) {
-        this.user = user;
-    }
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hyldesigner:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hyldesigner="http://mdse.hylstudio.cn/hyldesigner" name="demo">
+  <packageRoot name="cn.hylstudio.mdse.demo.realworld">
+    <childs name="model">
+      <childs name="request">
+        <childs name="user">
+          <requestPayloads name="userLogin" generatedBy="//@packageRoot/@childs.1/@childs.0/@domainEntities.0">
+            <attrs xsi:type="hyldesigner:RequestAttr" key="user" type="obj" objType="//@packageRoot/@childs.0/@childs.0/@childs.0/@dtos.0"/>
+          </requestPayloads>
+          <dtos name="userLoginRequest" generatedByDomainEntity="//@packageRoot/@childs.1/@childs.0/@domainEntities.0">
+            <attrs xsi:type="hyldesigner:DomainAttr" key="password" type="str"/>
+            <attrs xsi:type="hyldesigner:DomainAttr" key="email" type="str" isBizKey="true"/>
+          </dtos>
+        </childs>
+      </childs>
+      <childs name="response">
+        <childs name="user">
+          <responseResults name="userLogin" generatedBy="//@packageRoot/@childs.1/@childs.0/@domainEntities.0">
+            <attrs xsi:type="hyldesigner:ResponseAttr" key="user" type="obj" objType="//@packageRoot/@childs.0/@childs.1/@childs.0/@dtos.0"/>
+          </responseResults>
+          <dtos name="userLoginResponse" generatedByDomainEntity="//@packageRoot/@childs.1/@childs.0/@domainEntities.0">
+            <attrs xsi:type="hyldesigner:DomainAttr" key="username" type="str"/>
+            <attrs xsi:type="hyldesigner:DomainAttr" key="bio" type="str"/>
+            <attrs xsi:type="hyldesigner:DomainAttr" key="email" type="str" isBizKey="true"/>
+            <attrs xsi:type="hyldesigner:DomainAttr" key="image" type="str"/>
+            <attrs xsi:type="hyldesigner:DomainAttr" key="token" type="str"/>
+          </dtos>
+        </childs>
+      </childs>
+    </childs>
+    <childs name="model">
+      <childs name="user" type="">
+        <domainEntities id="RealworldUser">
+          <attrs key="username" type="str"/>
+          <attrs key="passsword" type="str"/>
+          <attrs key="bio" type="str"/>
+          <attrs key="email" type="str" isBizKey="true"/>
+          <attrs key="image" type="str"/>
+          <attrs key="token" type="str"/>
+        </domainEntities>
+      </childs>
+    </childs>
+  </packageRoot>
+</hyldesigner:Project>

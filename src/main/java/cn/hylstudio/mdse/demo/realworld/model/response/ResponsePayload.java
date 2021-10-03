@@ -1,5 +1,5 @@
 package cn.hylstudio.mdse.demo.realworld.model.response;
 
-public abstract class ResponsePayload  {
+public abstract class ResponsePayload {
 
 }

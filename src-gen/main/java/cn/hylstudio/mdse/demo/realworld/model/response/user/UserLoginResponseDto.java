@@ -1,57 +1,58 @@
 package cn.hylstudio.mdse.demo.realworld.model.response.user;
-
 public class UserLoginResponseDto {
-    private String email;
-    private String token;
-    private String username;
-    private String bio;
-    private String image;
 
-    public UserLoginResponseDto(){
-    }
+	private String username;
 
-    public String getEmail() {
-        return email;
-    }
+	private String bio;
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	private String email;
 
-    public String getToken() {
-        return token;
-    }
+	private String image;
 
-    public void setToken(String token) {
-        this.token = token;
-    }
+	private String token;
 
-    public String getUsername() {
-        return username;
-    }
+	public UserLoginResponseDto(){
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public String getUsername() {
+	    return username;
+	}
+	
+	public void setUsername(String username) {
+	    this.username = username;
+	}
 
-    public String getBio() {
-        return bio;
-    }
+	public String getBio() {
+	    return bio;
+	}
+	
+	public void setBio(String bio) {
+	    this.bio = bio;
+	}
 
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
+	public String getEmail() {
+	    return email;
+	}
+	
+	public void setEmail(String email) {
+	    this.email = email;
+	}
 
-    public String getImage() {
-        return image;
-    }
+	public String getImage() {
+	    return image;
+	}
+	
+	public void setImage(String image) {
+	    this.image = image;
+	}
 
-    public void setImage(String image) {
-        this.image = image;
-    }
-//"email": "jake@jake.jake",
-//"token": "jwt.token.here",
-//"username": "jake",
-//"bio": "I work at statefarm",
-//"image": null
+	public String getToken() {
+	    return token;
+	}
+	
+	public void setToken(String token) {
+	    this.token = token;
+	}
+
+
 }

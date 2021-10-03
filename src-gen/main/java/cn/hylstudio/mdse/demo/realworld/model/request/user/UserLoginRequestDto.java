@@ -1,29 +1,28 @@
 package cn.hylstudio.mdse.demo.realworld.model.request.user;
-
 public class UserLoginRequestDto {
-    private String email;
-    private String password;
-    public UserLoginRequestDto() {
-    }
 
-    public UserLoginRequestDto(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
+	private String password;
 
-    public String getEmail() {
-        return email;
-    }
+	private String email;
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public UserLoginRequestDto(){
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getPassword() {
+	    return password;
+	}
+	
+	public void setPassword(String password) {
+	    this.password = password;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getEmail() {
+	    return email;
+	}
+	
+	public void setEmail(String email) {
+	    this.email = email;
+	}
+
+
 }

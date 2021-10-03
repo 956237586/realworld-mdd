@@ -2,7 +2,7 @@ package cn.hylstudio.mdse.demo.realworld.controller.user;
 
 import cn.hylstudio.mdse.demo.realworld.controller.BaseController;
 import cn.hylstudio.mdse.demo.realworld.model.request.user.UserLoginRequestPayload;
-import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponsePayload;
+import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponseResult;
 import cn.hylstudio.mdse.demo.realworld.service.login.IBizLoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +20,9 @@ public class UsersController extends BaseController {
     private IBizLoginService loginService;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public UserLoginResponsePayload login(@RequestBody UserLoginRequestPayload payload) {
+    public UserLoginResponseResult login(@RequestBody UserLoginRequestPayload payload) {
         LOGGER.info("login, payload = [{}]", payload);
-        UserLoginResponsePayload result = loginService.login(payload);
+        UserLoginResponseResult result = loginService.login(payload);
         return result;
     }
 }

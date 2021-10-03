@@ -3,6 +3,7 @@ package cn.hylstudio.mdse.demo.realworld.entity.mysql;
 public class RealWorldUser {
     private String email;
     private String password;
+
     public RealWorldUser() {
     }
 

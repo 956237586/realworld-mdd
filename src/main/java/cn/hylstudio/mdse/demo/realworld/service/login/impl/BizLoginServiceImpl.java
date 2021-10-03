@@ -4,9 +4,9 @@ import cn.hylstudio.mdse.demo.realworld.controller.user.UsersController;
 import cn.hylstudio.mdse.demo.realworld.entity.mysql.RealWorldUser;
 import cn.hylstudio.mdse.demo.realworld.exception.BizException;
 import cn.hylstudio.mdse.demo.realworld.model.request.user.UserLoginRequestDto;
-import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponsePayload;
-import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponseDto;
 import cn.hylstudio.mdse.demo.realworld.model.request.user.UserLoginRequestPayload;
+import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponseDto;
+import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponseResult;
 import cn.hylstudio.mdse.demo.realworld.service.login.IBizLoginService;
 import io.netty.util.internal.StringUtil;
 import org.slf4j.Logger;
@@ -22,7 +22,7 @@ public class BizLoginServiceImpl implements IBizLoginService {
         return realWorldUser;
     }
 
-    public UserLoginResponsePayload login(UserLoginRequestPayload payload) {
+    public UserLoginResponseResult login(UserLoginRequestPayload payload) {
         checkLoginRequestPayload(payload);
         UserLoginRequestDto userLoginDto = convertPayloadToRequestDto(payload);
         RealWorldUser user = doLogin(userLoginDto);
@@ -66,8 +66,8 @@ public class BizLoginServiceImpl implements IBizLoginService {
         return userDto;
     }
 
-    private UserLoginResponsePayload convertUserToLoginResponse(UserLoginResponseDto userDto) {
-        UserLoginResponsePayload result = new UserLoginResponsePayload();
+    private UserLoginResponseResult convertUserToLoginResponse(UserLoginResponseDto userDto) {
+        UserLoginResponseResult result = new UserLoginResponseResult();
         result.setUser(userDto);
         return result;
     }
