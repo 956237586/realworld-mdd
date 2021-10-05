@@ -1,5 +1,6 @@
 package cn.hylstudio.mdse.demo.realworld.service.login.impl;
 
+import cn.hylstudio.mdse.demo.realworld.Constants;
 import cn.hylstudio.mdse.demo.realworld.RealworldApplicationTests;
 import cn.hylstudio.mdse.demo.realworld.entity.mysql.RealWorldUser;
 import cn.hylstudio.mdse.demo.realworld.model.request.user.UserLoginRequestDto;
@@ -32,7 +33,7 @@ class BizLoginServiceImplTest extends RealworldApplicationTests {
         String token = responseUserDto.getToken();
         Assert.hasText(token, "response result responseUserDto.token shoud has text");
         //jwt check
-        RealWorldUser currentUser = bizLoginService.getCurrentUserFromHeader(token);
+        RealWorldUser currentUser = bizLoginService.getCurrentUserFromHeader(Constants.JWT_HEADER_PREFIX + token);
         Assert.notNull(currentUser, "currentUser must not null");
         Assert.isTrue("aaa@abc.com".equals(currentUser.getEmail()), "currentUser must be aaa@abc.com");
 

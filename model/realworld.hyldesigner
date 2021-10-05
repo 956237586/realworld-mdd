@@ -4,10 +4,10 @@
     <childs name="model">
       <childs name="request">
         <childs name="user">
-          <requestPayloads name="userLogin" generatedBy="//@packageRoot/@childs.1/@childs.0/@domainEntities.0">
+          <requestPayloads type="obj" objType="//@packageRoot/@childs.0/@childs.0/@childs.0/@requestPayloads.0" name="userLogin" generatedBy="//@packageRoot/@childs.2/@childs.0/@domainEntities.0">
             <attrs xsi:type="hyldesigner:RequestAttr" key="user" type="obj" objType="//@packageRoot/@childs.0/@childs.0/@childs.0/@dtos.0"/>
           </requestPayloads>
-          <dtos name="userLoginRequest" generatedByDomainEntity="//@packageRoot/@childs.1/@childs.0/@domainEntities.0">
+          <dtos name="userLoginRequest" generatedByDomainEntity="//@packageRoot/@childs.2/@childs.0/@domainEntities.0">
             <attrs xsi:type="hyldesigner:DomainAttr" key="password" type="str"/>
             <attrs xsi:type="hyldesigner:DomainAttr" key="email" type="str" isBizKey="true"/>
           </dtos>
@@ -15,10 +15,10 @@
       </childs>
       <childs name="response">
         <childs name="user">
-          <responseResults name="userLogin" generatedBy="//@packageRoot/@childs.1/@childs.0/@domainEntities.0">
+          <responseResults type="obj" objType="//@packageRoot/@childs.0/@childs.1/@childs.0/@responseResults.0" name="userLogin" generatedBy="//@packageRoot/@childs.2/@childs.0/@domainEntities.0">
             <attrs xsi:type="hyldesigner:ResponseAttr" key="user" type="obj" objType="//@packageRoot/@childs.0/@childs.1/@childs.0/@dtos.0"/>
           </responseResults>
-          <dtos name="userLoginResponse" generatedByDomainEntity="//@packageRoot/@childs.1/@childs.0/@domainEntities.0">
+          <dtos name="userLoginResponse" generatedByDomainEntity="//@packageRoot/@childs.2/@childs.0/@domainEntities.0">
             <attrs xsi:type="hyldesigner:DomainAttr" key="username" type="str"/>
             <attrs xsi:type="hyldesigner:DomainAttr" key="bio" type="str"/>
             <attrs xsi:type="hyldesigner:DomainAttr" key="email" type="str" isBizKey="true"/>
@@ -26,6 +26,18 @@
             <attrs xsi:type="hyldesigner:DomainAttr" key="token" type="str"/>
           </dtos>
         </childs>
+      </childs>
+    </childs>
+    <childs name="controller">
+      <childs name="user">
+        <controllers name="users">
+          <mappings>/api/users</mappings>
+          <restInterface name="login" desc="login" payload="//@packageRoot/@childs.0/@childs.0/@childs.0/@requestPayloads.0" result="//@packageRoot/@childs.0/@childs.1/@childs.0/@responseResults.0">
+            <methods>POST</methods>
+            <mappings>/login</mappings>
+            <processBlock name="loginProcess"/>
+          </restInterface>
+        </controllers>
       </childs>
     </childs>
     <childs name="model">
