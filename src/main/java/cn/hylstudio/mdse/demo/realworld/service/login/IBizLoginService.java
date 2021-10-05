@@ -8,5 +8,7 @@ public interface IBizLoginService {
 
     UserLoginResponseResult login(UserLoginRequestPayload payload);
 
-    RealWorldUser getCurrentUser(String authHeader);
+    RealWorldUser getCurrentUserFromHeader(String authHeader);
+
+    UserLoginResponseResult getUserInfo(RealWorldUser currentUser, String currentUserJwt);
 }

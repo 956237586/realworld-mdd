@@ -24,13 +24,11 @@ public class AuthInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         ContextHolder.setCurrentUser(null);
+        ContextHolder.setCurrentUserJwt("");
         String authHeader = request.getHeader(Constants.AUTH_HEADER);
-        if (StringUtil.isNullOrEmpty(authHeader)) {
-            LOGGER.info("auth failed, authHeader = [{}]", authHeader);
-            throw new AuthException("auth error");
-        }
-        RealWorldUser user = bizLoginService.getCurrentUser(authHeader);
+        RealWorldUser user = bizLoginService.getCurrentUserFromHeader(authHeader);
         ContextHolder.setCurrentUser(user);
+        ContextHolder.setCurrentUserJwt(authHeader);
         return true;
     }
 }
