@@ -8,19 +8,22 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import cn.hylstudio.mdse.demo.realworld.controller.BaseController;
 import cn.hylstudio.mdse.demo.realworld.service.login.IBizLoginService;
+
 import cn.hylstudio.mdse.demo.realworld.model.request.user.UserLoginRequestPayload;
-import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponseResult; 
+import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponseResult;
 
 @RestController
 @RequestMapping({"/api/users"})
 public class UsersController extends BaseController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(UsersController.class);
-    @Autowired
-    private IBizLoginService loginService;
+	private static final Logger LOGGER = LoggerFactory.getLogger(UsersController.class);
+
+	@Autowired
+	private IBizLoginService loginService;
+
 	@RequestMapping(value = {"/login"}, method = {RequestMethod.POST})
-	public UserLoginResponseResult login(@RequestBody UserLoginRequestPayload userLogin) {
-	    LOGGER.info("login, userLogin = [{}]", userLogin);
-	    UserLoginResponseResult result = loginService.login(userLogin);
-	    return result;
+	public UserLoginResponseResult login(@RequestBody UserLoginRequestPayload payload) {
+		LOGGER.info("login, payload = [{}]", payload);
+		UserLoginResponseResult result = loginService.login(payload);
+		return result;
 	}
 }
