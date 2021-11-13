@@ -11,6 +11,7 @@ import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponseDto
 import cn.hylstudio.mdse.demo.realworld.model.response.user.UserLoginResponseResult;
 import cn.hylstudio.mdse.demo.realworld.service.login.IBizLoginService;
 import cn.hylstudio.mdse.demo.realworld.service.user.IBizUserService;
+import cn.hylstudio.mdse.demo.realworld.util.ValueUtils;
 import com.google.gson.Gson;
 import io.netty.util.internal.StringUtil;
 import net.bytebuddy.utility.RandomString;
@@ -96,16 +97,10 @@ public class BizLoginServiceImpl implements IBizLoginService {
     }
 
     private void checkLoginRequestPayload(UserLoginRequestPayload payload) {
-        if (payload.getUser() == null) {
-            throw new BizException("empty user");
-        }
+        ValueUtils.nonNull(payload.getUser(), "empty payload.user");;
         UserLoginRequestDto user = payload.getUser();
-        if (StringUtil.isNullOrEmpty(user.getEmail())) {
-            throw new BizException("empty email");
-        }
-        if (StringUtil.isNullOrEmpty(user.getPassword())) {
-            throw new BizException("empty password");
-        }
+        ValueUtils.notEmpty(user.getEmail(), "empty user.email");
+        ValueUtils.notEmpty(user.getPassword(), "empty user.password");
     }
 
     private UserLoginRequestDto convertPayloadToRequestDto(UserLoginRequestPayload payload) {

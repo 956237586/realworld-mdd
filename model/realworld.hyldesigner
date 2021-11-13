@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hyldesigner:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:control="http://mdse.hylstudio.cn/hyldesigner/control" xmlns:hyldesigner="http://mdse.hylstudio.cn/hyldesigner" name="demo">
+<hyldesigner:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:check="http://mdse.hylstudio.cn/hyldesigner/check" xmlns:control="http://mdse.hylstudio.cn/hyldesigner/control" xmlns:hyldesigner="http://mdse.hylstudio.cn/hyldesigner" name="demo">
   <packageRoot name="cn.hylstudio.mdse.demo.realworld">
     <childs name="meta-model">
       <childs name="types">
@@ -23,11 +23,17 @@
       <childs name="request">
         <childs name="user">
           <requestPayloads name="userLogin">
-            <attrs xsi:type="hyldesigner:RequestAttr" type="//@packageRoot/@childs.1/@childs.0/@childs.0/@dtos.0" name="user"/>
+            <attrs xsi:type="hyldesigner:RequestAttr" type="//@packageRoot/@childs.1/@childs.0/@childs.0/@dtos.0" name="user">
+              <attrReferencedCheckRules xsi:type="check:HasValueRefCheckRule"/>
+            </attrs>
           </requestPayloads>
           <dtos name="userLoginRequest" generatedByDomainEntity="//@packageRoot/@childs.0/@childs.1/@domainEntities.0">
-            <attrs xsi:type="hyldesigner:DomainAttr" type="//@packageRoot/@childs.0/@childs.0/@types.0" name="password"/>
-            <attrs xsi:type="hyldesigner:DomainAttr" type="//@packageRoot/@childs.0/@childs.0/@types.0" name="email"/>
+            <attrs xsi:type="hyldesigner:DomainAttr" type="//@packageRoot/@childs.0/@childs.0/@types.0" name="password">
+              <attrDomainCheckRules xsi:type="check:NotEmptyCheckRule"/>
+            </attrs>
+            <attrs xsi:type="hyldesigner:DomainAttr" type="//@packageRoot/@childs.0/@childs.0/@types.0" name="email">
+              <attrDomainCheckRules xsi:type="check:NotEmptyCheckRule"/>
+            </attrs>
           </dtos>
         </childs>
       </childs>
