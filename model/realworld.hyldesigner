@@ -27,9 +27,27 @@
               <attrReferencedCheckRules xsi:type="check:HasValueRefCheckRule"/>
             </attrs>
           </requestPayloads>
+          <requestPayloads name="testPayload">
+            <attrs xsi:type="hyldesigner:RequestAttr" type="//@packageRoot/@childs.0/@childs.0/@types.2" name="inttest">
+              <attrDomainCheckRules xsi:type="check:IntegerRangeCheckRule" max="10"/>
+              <attrReferencedCheckRules xsi:type="check:MustNotNullCheckRule"/>
+            </attrs>
+            <attrs xsi:type="hyldesigner:RequestAttr" type="//@packageRoot/@childs.0/@childs.0/@types.3" name="longtest">
+              <attrDomainCheckRules xsi:type="check:LongRangeCheckRule" min="10" max="20"/>
+              <attrReferencedCheckRules xsi:type="check:MustNotNullCheckRule"/>
+            </attrs>
+            <attrs xsi:type="hyldesigner:RequestAttr" type="//@packageRoot/@childs.0/@childs.0/@types.1" name="booleanTest">
+              <attrDomainCheckRules xsi:type="check:TrueValueCheckRule"/>
+              <attrDomainCheckRules xsi:type="check:FalseValueCheckRule"/>
+              <attrReferencedCheckRules xsi:type="check:HasValueRefCheckRule"/>
+              <attrReferencedCheckRules xsi:type="check:MustNullCheckRule"/>
+            </attrs>
+          </requestPayloads>
           <dtos name="userLoginRequest" generatedByDomainEntity="//@packageRoot/@childs.0/@childs.1/@domainEntities.0">
             <attrs xsi:type="hyldesigner:DomainAttr" type="//@packageRoot/@childs.0/@childs.0/@types.0" name="password">
               <attrDomainCheckRules xsi:type="check:NotEmptyCheckRule"/>
+              <attrDomainCheckRules xsi:type="check:LengthCheckRule" min="8" max="16"/>
+              <attrDomainCheckRules xsi:type="check:RegexCheckRule" regex=".+"/>
             </attrs>
             <attrs xsi:type="hyldesigner:DomainAttr" type="//@packageRoot/@childs.0/@childs.0/@types.0" name="email">
               <attrDomainCheckRules xsi:type="check:NotEmptyCheckRule"/>

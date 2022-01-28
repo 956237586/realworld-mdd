@@ -11,9 +11,11 @@ public class UserLoginRequestPayload extends RequestPayload {
 
 	public void checkUserLoginRequestPayload(UserLoginRequestPayload userLogin) {
 		ValueUtils.nonNull(userLogin.getUser(), "empty userLogin.user");
-		
 		UserLoginRequestDto user = userLogin.getUser();
 		ValueUtils.notEmpty(user.getPassword(), "empty userLogin.user.password");
+		ValueUtils.checkLength(user.getPassword(), 8L, 16L, "userLogin.user.password length error");
+		ValueUtils.checkRegex(user.getPassword(), ".+", "userLogin.user.password regex check error");
+		
 		ValueUtils.notEmpty(user.getEmail(), "empty userLogin.user.email");
 	}
 

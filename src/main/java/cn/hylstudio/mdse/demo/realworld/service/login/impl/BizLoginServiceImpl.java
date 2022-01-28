@@ -90,13 +90,13 @@ public class BizLoginServiceImpl implements IBizLoginService {
     }
 
     public UserLoginResponseResult login(UserLoginRequestPayload payload) {
-        checkLoginRequestPayload(payload);
+        checkUserLoginRequestPayload(payload);
         UserLoginRequestDto userLoginDto = convertPayloadToRequestDto(payload);
         UserLoginResponseDto userLoginResponseDto = doLogin(userLoginDto);
         return convertUserToLoginResponse(userLoginResponseDto);
     }
 
-    private void checkLoginRequestPayload(UserLoginRequestPayload payload) {
+    private void checkUserLoginRequestPayload(UserLoginRequestPayload payload) {
         ValueUtils.nonNull(payload.getUser(), "empty payload.user");;
         UserLoginRequestDto user = payload.getUser();
         ValueUtils.notEmpty(user.getEmail(), "empty user.email");
