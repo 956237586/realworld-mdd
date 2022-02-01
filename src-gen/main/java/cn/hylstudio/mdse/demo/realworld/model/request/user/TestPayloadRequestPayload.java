@@ -14,12 +14,13 @@ public class TestPayloadRequestPayload extends RequestPayload {
 	}
 
 	public void checkTestPayloadRequestPayload(TestPayloadRequestPayload testPayload) {
+		//inttest check begin
 		ValueUtils.nonNull(testPayload.getInttest(), "empty testPayload.inttest");
 		ValueUtils.checkNumberRange(testPayload.getInttest(), 0, 10, "testPayload.inttest range error");
-		
+		//longtest check begin
 		ValueUtils.nonNull(testPayload.getLongtest(), "empty testPayload.longtest");
 		ValueUtils.checkNumberRange(testPayload.getLongtest(), 10L, 20L, "testPayload.longtest range error");
-		
+		//booleanTest check begin
 		ValueUtils.checkTrue(testPayload.getBooleanTest(), "testPayload.booleanTest value error");
 		ValueUtils.checkFalse(testPayload.getBooleanTest(), "testPayload.booleanTest value error");
 	}

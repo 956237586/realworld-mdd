@@ -10,6 +10,7 @@ public class UserLoginRequestPayload extends RequestPayload {
 	}
 
 	public void checkUserLoginRequestPayload(UserLoginRequestPayload userLogin) {
+		//user check begin
 		ValueUtils.nonNull(userLogin.getUser(), "empty userLogin.user");
 		UserLoginRequestDto user = userLogin.getUser();
 		//email check begin
