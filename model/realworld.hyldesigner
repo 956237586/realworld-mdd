@@ -3,10 +3,6 @@
   <packageRoot name="cn.hylstudio.mdse.demo.realworld">
     <childs name="meta-model">
       <childs name="types">
-        <types xsi:type="hyldesigner:CustomPrimitiveType" type="str"/>
-        <types xsi:type="hyldesigner:CustomPrimitiveType" type="bool"/>
-        <types xsi:type="hyldesigner:CustomPrimitiveType" type="int"/>
-        <types xsi:type="hyldesigner:CustomPrimitiveType" type="long"/>
         <types xsi:type="hyldesigner:Str"/>
         <types xsi:type="hyldesigner:Bool"/>
         <types xsi:type="hyldesigner:Int"/>
@@ -14,7 +10,7 @@
       </childs>
       <childs name="user" type="">
         <domainEntities id="RealworldUser">
-          <attrs type="//@packageRoot/@childs.0/@childs.0/@types.4" name="bio"/>
+          <attrs type="//@packageRoot/@childs.0/@childs.0/@types.0" name="bio"/>
           <attrs type="//@packageRoot/@childs.0/@childs.0/@types.0" name="email">
             <attrDomainCheckRules xsi:type="check:NotEmptyCheckRule"/>
           </attrs>
